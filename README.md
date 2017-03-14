@@ -33,7 +33,7 @@ npm run build       // 生产部署
 	|           |-- about.vue                  // 公共头部
 	|           |-- index.vue                  // 入口
 	|           |-- login.vue                  // 公共左边栏
-	|   |-- page                               // 主要页面
+	|   	|-- page                           // 主要页面
 	|           |-- eharts.vue                 // 百度echarts
 	|           |-- form.vue                   // 表单
 	|           |-- rtf.vue                    // 富文本框
