@@ -53,11 +53,11 @@ npm run build       // 生产部署
 --------------
 
 ### 截图预览
-![1](https://github.com/vanishcode/iview2-management-system/raw/master/static/s1.png)
+![1](https://github.com/vanishcode/iview2-management-system/raw/master/static/screenshots/s1.png)
 
-![2](https://github.com/vanishcode/iview2-management-system/raw/master/static/s2.png)
+![2](https://github.com/vanishcode/iview2-management-system/raw/master/static/screenshots/s2.png)
 
-![3](https://github.com/vanishcode/iview2-management-system/raw/master/static/s3.png)
+![3](https://github.com/vanishcode/iview2-management-system/raw/master/static/screenshots/s3.png)
 
 ----------------
 
