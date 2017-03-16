@@ -29,10 +29,10 @@ npm run build       // 生产部署
 	|-- static                                 // 静态文件目录
 	|-- src                                    // 源码目录
 	|   |-- components                         // 组件
-	|       |-- common                         // 全局组件
-	|           |-- about.vue                  // 公共头部
+	|       |-- common                         // 全局
+	|           |-- about.vue                  // 关于页面
 	|           |-- index.vue                  // 入口
-	|           |-- login.vue                  // 公共左边栏
+	|           |-- login.vue                  // 登录页面
 	|   	|-- page                           // 主要页面
 	|           |-- eharts.vue                 // 百度echarts
 	|           |-- form.vue                   // 表单
@@ -41,8 +41,8 @@ npm run build       // 生产部署
 	|           |-- markdown-editor.vue        // markdown编辑器
 	|           |-- table.vue                  // 表格
 	|           |-- upload.vue                 // 文件上传
-	|   |-- App.vue                            // 页面入口文件
-	|   |-- main.js                            // 程序入口文件
+	|   |-- App.vue                            // 页面入口
+	|   |-- main.js                            // 程序入口
 	|-- .babelrc                               // ES6语法编译配置
 	|-- .editorconfig                          // 代码编写规格
 	|-- .gitignore                             // push忽略文件
