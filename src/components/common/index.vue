@@ -73,42 +73,42 @@
 <div class="layout" :class="{'layout-hide-text': spanLeft < 5}">
     <Row type="flex">
         <i-col :span="spanLeft" class="layout-menu-left">
-            <Menu :activeName="activePage" theme="dark" width="auto" @on-select="routeTo" @updateActiveName="setActive">
+            <Menu :active-name="setActive" theme="dark" width="auto" @on-select="routeTo">
                 <div class="layout-logo-left">
                     <h3>后台管理</h3></div>
-                <Menu-item name="1">
+                <Menu-item name="about">
                     <Icon type="ios-navigate" :size="iconSize"></Icon>
                     <span class="layout-text">关于</span>
                 </Menu-item>
-                <Menu-item name="2">
+                <Menu-item name="form">
                     <Icon type="document" :size="iconSize"></Icon>
                     <span class="layout-text">表单</span>
                 </Menu-item>
-                <Menu-item name="3">
+                <Menu-item name="table">
                     <Icon type="navicon" :size="iconSize"></Icon>
                     <span class="layout-text">表格</span>
                 </Menu-item>
-                <Menu-item name="4">
+                <Menu-item name="markdown-viewer">
                     <Icon type="social-markdown" :size="iconSize"></Icon>
                     <span class="layout-text">Markdown</span>
                 </Menu-item>
-                <Menu-item name="5">
+                <Menu-item name="markdown-editor-1">
                     <Icon type="edit" :size="iconSize"></Icon>
                     <span class="layout-text">Md编辑器(1)</span>
                 </Menu-item>
-                <Menu-item name="6">
+                <Menu-item name="markdown-editor-2">
                     <Icon type="edit" :size="iconSize"></Icon>
                     <span class="layout-text">Md编辑器(2)</span>
                 </Menu-item>
-                <Menu-item name="7">
+                <Menu-item name="rtf">
                     <Icon type="document-text" :size="iconSize"></Icon>
                     <span class="layout-text">富文本框</span>
                 </Menu-item>
-                <Menu-item name="8">
+                <Menu-item name="upload">
                     <Icon type="ios-cloud-upload-outline" :size="iconSize"></Icon>
                     <span class="layout-text">文件上传</span>
                 </Menu-item>
-                <Menu-item name="9">
+                <Menu-item name="echarts">
                     <Icon type="pie-graph" :size="iconSize"></Icon>
                     <span class="layout-text">图表(Echarts)</span>
                 </Menu-item>
@@ -124,7 +124,7 @@
                 <Breadcrumb>
                     <Breadcrumb-item>首页</Breadcrumb-item>
                     <Breadcrumb-item>页面</Breadcrumb-item>
-                    <Breadcrumb-item>{{pageName}}</Breadcrumb-item>
+                    <Breadcrumb-item>{{this.$route.path.replace('/','')}}</Breadcrumb-item>
                 </Breadcrumb>
             </div>
             <div class="layout-content">
@@ -151,53 +151,22 @@ export default {
             return {
                 spanLeft: 5,
                 spanRight: 19,
-                activePage: '1',
-                pageName: 'about',
-                //pageLink: '',
-                page: [{
-                    index: 1,
-                    name: 'about'
-                }, {
-                    index: 2,
-                    name: 'form'
-                }, {
-                    index: 3,
-                    name: 'table'
-                }, {
-                    index: 4,
-                    name: 'markdown-viewer'
-                }, {
-                    index: 5,
-                    name: 'markdown-editor-1'
-                }, {
-                    index: 6,
-                    name: 'markdown-editor-2'
-                },{
-                    index: 7,
-                    name: 'rtf'
-                }, {
-                    index: 8,
-                    name: 'upload'
-                },{
-                    index: 9,
-                    name: 'echarts'
-                }]
+                page: ['about','form','table','markdown-viewer', 'markdown-editor-1', 'markdown-editor-2','rtf','upload','echarts']
             }
         },
-        // created: {
-        //   function () {
-        //     this.$Message.success('提交成功!');
-        //   }
-        // },
         computed: {
             iconSize() {
                 return this.spanLeft === 5 ? 14 : 24;
+            },
+            setActive() {
+              return this.$route.path.replace('/','');
             }
         },
         methods: {
             toggleClick() {
                     if (this.spanLeft === 5) {
                         this.spanLeft = 2;
+
                         this.spanRight = 22;
                     } else {
                         this.spanLeft = 5;
@@ -206,15 +175,9 @@ export default {
                 },
                 routeTo(e) {
                     //console.log(e);
-                    this.$router.push(this.$data.page[e - 1].name);
-                    this.$set(this.$data, 'pageName', this.$data.page[e - 1].name);
-                    //this.$set(this.$data,'activePage',this.$data.page[e - 1].index+'');
-                },
-                setActive() {
-                    console.log('gg')
+                    this.$router.push(e);
                 }
-        },
-
+        }
 }
 
 </script>
