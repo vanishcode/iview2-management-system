@@ -1,8 +1,9 @@
+
 !.babelrc
 !.editorconfig
 !.gitignore
 !.postcssrc.js
-.DS_Store
+*/.DS_Store
 node_modules/
 dist/
 npm-debug.log
